@@ -21,11 +21,15 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 
     <!-- Pacotes para testes unitários com Xunit -->
-    <PackageReference Include="xunit" Version="2.8.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" /> <!-- Adicione esta linha -->
 
     <!-- Adição da referência ao Newtonsoft.Json -->
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
