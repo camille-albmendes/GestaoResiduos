@@ -7,14 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Pacotes para autenticação e documentação -->
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.3" />
+
+    <!-- Pacotes para Entity Framework Core -->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6" PrivateAssets="All" />
+
+    <!-- Pacote para Swagger (OpenAPI) -->
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+
+    <!-- Pacotes para testes unitários com Xunit -->
     <PackageReference Include="xunit" Version="2.8.1" />
+
+    <!-- Adição da referência ao Newtonsoft.Json -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    
   </ItemGroup>
 
 </Project>
