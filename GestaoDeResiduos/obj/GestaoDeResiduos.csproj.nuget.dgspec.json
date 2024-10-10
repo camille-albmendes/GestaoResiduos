@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabri\\Downloads\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos.csproj": {}
+    "C:\\Users\\gabri\\Desktop\\GestaoResiduos\\GestaoDeResiduos\\GestaoDeResiduos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabri\\Downloads\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos.csproj": {
+    "C:\\Users\\gabri\\Desktop\\GestaoResiduos\\GestaoDeResiduos\\GestaoDeResiduos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabri\\Downloads\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos.csproj",
+        "projectUniqueName": "C:\\Users\\gabri\\Desktop\\GestaoResiduos\\GestaoDeResiduos\\GestaoDeResiduos.csproj",
         "projectName": "GestaoDeResiduos",
-        "projectPath": "C:\\Users\\gabri\\Downloads\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos.csproj",
+        "projectPath": "C:\\Users\\gabri\\Desktop\\GestaoResiduos\\GestaoDeResiduos\\GestaoDeResiduos.csproj",
         "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabri\\Downloads\\GestaoDeResiduos\\GestaoDeResiduos\\GestaoDeResiduos\\obj\\",
+        "outputPath": "C:\\Users\\gabri\\Desktop\\GestaoResiduos\\GestaoDeResiduos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,6 +71,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
