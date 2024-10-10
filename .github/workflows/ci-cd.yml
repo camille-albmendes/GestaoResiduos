@@ -1,0 +1,48 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Ou a branch que você deseja monitorar
+  pull_request:
+    branches:
+      - main  # Executar em pull requests para a branch principal
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0'  # Substitua pela versão necessária
+
+      - name: Restore dependencies
+        run: dotnet restore ./GestaoDeResiduos/GestaoDeResiduos.csproj  # Ajuste o caminho se necessário
+
+      - name: Build the project
+        run: dotnet build ./GestaoDeResiduos/GestaoDeResiduos.csproj --configuration Release
+
+      - name: Run tests
+        run: dotnet test ./GestaoDeResiduos/GestaoDeResiduos.csproj --configuration Release --no-build
+
+      - name: Publish the project
+        run: dotnet publish ./GestaoDeResiduos/GestaoDeResiduos.csproj --configuration Release --output ./publish
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'  # Executar apenas na branch principal
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to your server
+        run: |
+          # Adicione aqui os comandos necessários para implantar seu aplicativo
+          # Por exemplo, você pode usar SSH ou uma ferramenta de implantação específica
