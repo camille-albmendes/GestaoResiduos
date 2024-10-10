@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile  
+    image: gestao_residuos 
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@oracle-db:1521:ORCL
+      SPRING_DATASOURCE_USERNAME: rm98511
+      SPRING_DATASOURCE_PASSWORD: 260102
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: oracle.jdbc.OracleDriver
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.Oracle12cDialect
+    depends_on:
+      - oracle-db
+
+  oracle-db:
+    image: gvenzl/oracle-xe
+    environment:
+      ORACLE_PASSWORD: 260102
+      ORACLE_DATABASE: ORCL
+    ports:
+      - "1521:1521"
