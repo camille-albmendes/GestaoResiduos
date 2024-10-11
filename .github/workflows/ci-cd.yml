@@ -22,16 +22,16 @@ jobs:
           dotnet-version: '8.0'  # Substitua pela versão necessária
 
       - name: Restore dependencies
-        run: dotnet restore ./GestaoDeResiduos/GestaoDeResiduos.csproj  # Ajuste o caminho se necessário
+        run: dotnet restore /GestaoDeResiduos.csproj  # Ajuste o caminho se necessário
 
       - name: Build the project
-        run: dotnet build ./GestaoDeResiduos/GestaoDeResiduos.csproj --configuration Release
+        run: dotnet build /GestaoDeResiduos.csproj --configuration Release
 
       - name: Run tests
-        run: dotnet test ./GestaoDeResiduos/GestaoDeResiduos.csproj --configuration Release --no-build
+        run: dotnet test /GestaoDeResiduos.csproj --configuration Release --no-build
 
       - name: Publish the project
-        run: dotnet publish ./GestaoDeResiduos/GestaoDeResiduos.csproj --configuration Release --output ./publish
+        run: dotnet publish /GestaoDeResiduos.csproj --configuration Release --output ./publish
 
   deploy:
     runs-on: ubuntu-latest
