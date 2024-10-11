@@ -15,7 +15,14 @@ public class LixoParaColetaControllerTests
             .UseInMemoryDatabase(databaseName: "TestDatabase")
             .Options;
         var context = new ApplicationDbContext(options);
-        var residencia = new Residencia { Logradouro = "Rua 1", Numero = "100", Cep = "12345-678" };
+         var residencia = new Residencia
+{
+    Logradouro = "Rua Teste",
+    Numero = "123",
+    Complemento = "Apto 101",  // A propriedade Complemento está sendo definida
+    Cep = "12345-678"
+};
+
         context.Residencias.Add(residencia);
         context.SaveChanges();
         var controller = new LixoParaColetaController(context);

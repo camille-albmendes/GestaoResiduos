@@ -16,7 +16,14 @@ public class ResidenciasControllerTests
             .Options;
         var context = new ApplicationDbContext(options);
         var controller = new ResidenciasController(context);
-        var residencia = new Residencia { Logradouro = "Rua 1", Numero = "100", Cep = "12345-678" };
+        var residencia = new Residencia
+{
+    Logradouro = "Rua Teste",
+    Numero = "123",
+    Complemento = "Apto 101",  // A propriedade Complemento está sendo definida
+    Cep = "12345-678"
+};
+
 
         var result = await controller.PostResidencia(residencia);
 
