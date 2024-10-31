@@ -1,9 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using GestaoDeResiduos.Data;
-using GestaoDeResiduos.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Threading.Tasks;
 
 namespace GestaoDeResiduos.Controllers
 {
@@ -25,9 +21,7 @@ namespace GestaoDeResiduos.Controllers
             if (residencia == null)
                 return NotFound();
 
-            residencia.LixoParaColeta = true;
-            // Suponha que a coleta ocorra semanalmente
-            residencia.DataProximaColeta = DateTime.Now.AddDays(7);
+            residencia.SinalizarLixoParaColeta();
 
             await _context.SaveChangesAsync();
             return NoContent();

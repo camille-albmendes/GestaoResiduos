@@ -1,8 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using GestaoDeResiduos.Data;
-using GestaoDeResiduos.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace GestaoDeResiduos.Controllers
 {
