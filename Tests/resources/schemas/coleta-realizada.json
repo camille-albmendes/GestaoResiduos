@@ -1,0 +1,12 @@
+{   
+    "$id": "coleta-realizada.json",
+    "title": "Coleta realizada de uma residência",
+    "description": "Resposta do endpoit que salva a informação de que uma coleta foi realizada em uma dada residência",
+    "type": "object",
+    "properties": {
+        "StatusCode": {
+            "type": "integer"
+        }
+    },
+    "required": [ "StatusCode" ]
+}

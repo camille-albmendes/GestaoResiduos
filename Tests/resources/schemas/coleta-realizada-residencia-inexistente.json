@@ -1,0 +1,12 @@
+{   
+    "$id": "coleta-realizada-residencia-inexistente.json",
+    "title": "Coleta não realizada devido a residência inexistente",
+    "description": "Resposta do endpoit que tenta salvar a informação de que uma coleta foi realizada em uma dada residência, porém esta não existe",
+    "type": "object",
+    "properties": {
+        "StatusCode": {
+            "type": "integer"
+        }
+    },
+    "required": [ "StatusCode" ]
+}

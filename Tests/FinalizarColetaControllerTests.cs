@@ -4,6 +4,9 @@ using GestaoDeResiduos.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
+using Json.Schema;
+using System.Text.Json.Nodes;
+using Newtonsoft.Json;
 
 public class FinalizarColetaControllerTests
 {
@@ -30,6 +33,11 @@ public class FinalizarColetaControllerTests
         var result = await finalizarColetasController.SinalizarColetaFinalizada(residencia.Id);
 
         Assert.IsType<NoContentResult>(result);
+
+        var schema = JsonSchema.FromFile("Tests/resources/schemas/coleta-realizada.json");
+        Assert.True(schema.Evaluate(
+            JsonObject.Parse(JsonConvert.SerializeObject(result))
+        ).IsValid);
     }
     
     [Fact]
@@ -44,5 +52,10 @@ public class FinalizarColetaControllerTests
         var result = await finalizarColetasController.SinalizarColetaFinalizada(123456);
 
         Assert.IsType<NotFoundResult>(result);
+
+        var schema = JsonSchema.FromFile("Tests/resources/schemas/coleta-realizada-residencia-inexistente.json");
+        Assert.True(schema.Evaluate(
+            JsonObject.Parse(JsonConvert.SerializeObject(result))
+        ).IsValid);
     }
 }

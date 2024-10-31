@@ -30,6 +30,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+
+    <!-- JSON Schema -->
+    <PackageReference Include="JsonSchema.Net" Version="7.2.3" />
   </ItemGroup>
 
 </Project>
