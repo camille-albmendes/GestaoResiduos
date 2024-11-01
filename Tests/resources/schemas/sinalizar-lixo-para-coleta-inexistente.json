@@ -1,0 +1,12 @@
+{   
+    "$id": "sinalizar-lixo-para-coleta-inexistente.json",
+    "title": "Sinalizar que uma coleta é necessária em uma residência inexistente",
+    "description": "Resposta do endpoit que salva a informação de que uma coleta é necessária em uma residência inexistente",
+    "type": "object",
+    "properties": {
+        "StatusCode": {
+            "type": "integer"
+        }
+    },
+    "required": [ "StatusCode" ]
+}
