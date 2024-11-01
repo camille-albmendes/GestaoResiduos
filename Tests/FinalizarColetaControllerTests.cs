@@ -27,12 +27,13 @@ public class FinalizarColetaControllerTests
 
         context.Residencias.Add(residencia);
         context.SaveChanges();
-        residencia.SinalizarColetaRealizada();
 
         var finalizarColetasController = new FinalizarColetaController(context);
         var result = await finalizarColetasController.SinalizarColetaFinalizada(residencia.Id);
 
         Assert.IsType<NoContentResult>(result);
+        Assert.False(residencia.LixoParaColeta);
+        Assert.Null(residencia.DataProximaColeta);
 
         var schema = JsonSchema.FromFile("Tests/resources/schemas/coleta-realizada.json");
         Assert.True(schema.Evaluate(

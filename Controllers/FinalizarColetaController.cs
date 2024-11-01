@@ -21,8 +21,7 @@ namespace GestaoDeResiduos.Controllers
             if (residencia == null)
                 return NotFound();
 
-            residencia.LixoParaColeta = false;
-            residencia.DataProximaColeta = null;
+            residencia.SinalizarColetaRealizada();
 
             await _context.SaveChangesAsync();
             return NoContent();
