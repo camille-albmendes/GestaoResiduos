@@ -1,0 +1,13 @@
+{   
+    "$id": "criar-residencia.json",
+    "title": "Cria uma residência",
+    "description": "Resposta do endpoit que cria uma residência",
+    "type": "object",
+    "properties": {
+        "Result":{
+            "Value": "string",
+            "StatusCode": "integer"
+        }
+    },
+    "required": [ "Result" ]
+}
