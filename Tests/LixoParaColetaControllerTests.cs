@@ -32,6 +32,8 @@ public class LixoParaColetaControllerTests
         var result = await controller.SinalizarLixoParaColeta(residencia.Id);
 
         Assert.IsType<NoContentResult>(result);
+        Assert.True(residencia.LixoParaColeta);
+        Assert.NotNull(residencia.DataProximaColeta);
 
         var schema = JsonSchema.FromFile("Tests/resources/schemas/sinalizar-lixo-para-coleta.json");
         Assert.True(schema.Evaluate(
