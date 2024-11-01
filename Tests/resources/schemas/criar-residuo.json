@@ -1,0 +1,22 @@
+{   
+    "$id": "criar-residuo.json",
+    "title": "Cria uma resíduo",
+    "description": "Resposta do endpoit que cria um resíduo",
+    "type": "object",
+    "properties": {
+        "Result":{
+            "Value": [
+                {
+                    "Id": "integer",
+                    "Tipo": "string",
+                    "Descrição": "string"
+                }
+            ],
+            "StatusCode": "integer",
+            "RouteValues": {
+                "id": "integer"
+            }
+        }
+    },
+    "required": [ "Result" ]
+}

@@ -1,0 +1,12 @@
+{   
+    "$id": "deletar-residuo.json",
+    "title": "Deleta um resíduo",
+    "description": "Resposta do endpoit que deleta um resíduo",
+    "type": "object",
+    "properties": {
+        "StatusCode": {
+            "type": "integer"
+        }
+    },
+    "required": [ "StatusCode" ]
+}
