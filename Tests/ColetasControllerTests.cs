@@ -25,9 +25,9 @@ public class ColetasControllerTests
             Cep = "12345-678"
         };
 
+        residencia.SinalizarLixoParaColeta();
         context.Residencias.Add(residencia);
         context.SaveChanges();
-        residencia.SinalizarLixoParaColeta();
 
         var coletasController = new ColetasController(context);
         var result = await coletasController.GetProximaColeta(residencia.Logradouro);
