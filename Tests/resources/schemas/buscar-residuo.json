@@ -1,0 +1,14 @@
+{   
+    "$id": "buscar-residuo.json",
+    "title": "Busca por um resíduo",
+    "description": "Resposta do endpoit que busca por um resíduo",
+    "type": "object",
+    "properties": {
+        "Value": {
+            "Id": "integer",
+            "Tipo": "string",
+            "Descrição": "string"
+        }
+    },
+    "required": [ "Value" ]
+}

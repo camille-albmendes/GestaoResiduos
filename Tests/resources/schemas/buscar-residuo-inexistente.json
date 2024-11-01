@@ -1,0 +1,12 @@
+{   
+    "$id": "buscar-residuo-inexistente.json",
+    "title": "Busca por um resíduo inexistente",
+    "description": "Resposta do endpoit que busca por um resíduo inexistente",
+    "type": "object",
+    "properties": {
+        "Result":{
+            "StatusCode": "integer"
+        }
+    },
+    "required": [ "Result" ]
+}

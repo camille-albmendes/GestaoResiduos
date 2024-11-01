@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using GestaoDeResiduos.Controllers;
 using GestaoDeResiduos.Data;
 using GestaoDeResiduos.Models;
+using Json.Schema;
+using System.Text.Json.Nodes;
+using Newtonsoft.Json;
 
 public class LixoParaColetaControllerTests
 {
@@ -29,6 +32,11 @@ public class LixoParaColetaControllerTests
         var result = await controller.SinalizarLixoParaColeta(residencia.Id);
 
         Assert.IsType<NoContentResult>(result);
+
+        var schema = JsonSchema.FromFile("Tests/resources/schemas/sinalizar-lixo-para-coleta.json");
+        Assert.True(schema.Evaluate(
+            JsonObject.Parse(JsonConvert.SerializeObject(result))
+        ).IsValid);
     }
     
     [Fact]
@@ -42,5 +50,10 @@ public class LixoParaColetaControllerTests
         var result = await controller.SinalizarLixoParaColeta(123456);
 
         Assert.IsType<NotFoundResult>(result);
+
+        var schema = JsonSchema.FromFile("Tests/resources/schemas/sinalizar-lixo-para-coleta-inexistente.json");
+        Assert.True(schema.Evaluate(
+            JsonObject.Parse(JsonConvert.SerializeObject(result))
+        ).IsValid);
     }
 }

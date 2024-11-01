@@ -4,6 +4,9 @@ using GestaoDeResiduos.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
+using Json.Schema;
+using System.Text.Json.Nodes;
+using Newtonsoft.Json;
 
 public class ColetasControllerTests
 {
@@ -34,6 +37,11 @@ public class ColetasControllerTests
             $"Próxima coleta será em: {residencia.DataProximaColeta}",
             (result.Result as OkObjectResult).Value
         );
+
+        var schema = JsonSchema.FromFile("Tests/resources/schemas/dados-proxima-coleta-residencia.json");
+        Assert.True(schema.Evaluate(
+            JsonObject.Parse(JsonConvert.SerializeObject(result))
+        ).IsValid);
     }
     
     [Fact]
@@ -52,5 +60,10 @@ public class ColetasControllerTests
             "Não há residências com lixo para coleta neste logradouro.",
             (result.Result as NotFoundObjectResult).Value
         );
+
+        var schema = JsonSchema.FromFile("Tests/resources/schemas/dados-proxima-coleta-residencia-inexistente.json");
+        Assert.True(schema.Evaluate(
+            JsonObject.Parse(JsonConvert.SerializeObject(result))
+        ).IsValid);
     }
 }

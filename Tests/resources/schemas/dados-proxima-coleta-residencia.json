@@ -1,0 +1,13 @@
+{   
+    "$id": "dados-proxima-coleta-residencia.json",
+    "title": "Dados da próxima coleta na residência",
+    "description": "Resposta do endpoit que busca a informação de quando será efetuada a próxima coleta em uma dada residência",
+    "type": "object",
+    "properties": {
+        "Result":{
+            "Value": "string",
+            "StatusCode": "integer"
+        }
+    },
+    "required": [ "Result" ]
+}
